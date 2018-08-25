@@ -59,7 +59,10 @@ array([[ -8.,  18.],
 
 from itertools import product
 import numpy as np
-from scipy.weave import inline
+try:
+    from weave import inline
+except ImportError: 
+    from scipy.weave import inline
 
 __all__ = ['accum', 'accum_np', 'accum_py', 'unpack', 'step_indices']
 
